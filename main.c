@@ -1,8 +1,10 @@
 #include "shell.h"
+
 /**
  *main - entry point for the shell program
  *Return: 0 on success
  */
+
 int main(void)
 {
 	char *buffer = malloc(500);

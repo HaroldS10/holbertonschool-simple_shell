@@ -2,6 +2,7 @@
 
 /**
  * prompt - prints a command prompt and waits for user input
+ *
  * Return: a buffer containing the user's input
  */
 char *prompt(void)
@@ -24,6 +25,7 @@ char *prompt(void)
 	}
 	else
 	{
+		/* Remove newline character from input */
 		buffer[chars_read - 1] = '\0';
 	}
 
