@@ -12,7 +12,6 @@ char **parse_line(char *line)
 	char **tokens = NULL;
 	char *token = NULL;
 
-	int filestatus;
 	char *auxpath;
 
 
@@ -43,7 +42,7 @@ char **parse_line(char *line)
 				tokens[0] = auxpath;
 				free(auxpath);
 			}
-}
+
 
 return (NULL);
 
