@@ -46,7 +46,7 @@ char **parse_line(char *line)
 }
 
 return (NULL);
-y
+
 if (position >= bufsize)
 {
 	bufsize += 64;

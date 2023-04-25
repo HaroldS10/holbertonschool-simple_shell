@@ -1,11 +1,9 @@
 #include "shell.h"
-
 /**
  * find_path - Search for a file in the PATH
  * @file: String to file to search
  * Return: Path to file if found, or NULL if not found in any path
  */
-
 char *find_path(char *file)
 {
 	char *path, *direction, *auxpath;
@@ -14,6 +12,7 @@ char *find_path(char *file)
 
 	pathlen = strlen(getenv("PATH"));
 	path = calloc((pathlen + 1), sizeof(*path));
+
 	if (path == NULL)
 		return (NULL);
 	auxpath = path;
