@@ -1,8 +1,10 @@
 #include "shell.h"
+
 /**
  * env_builtin - prints the environment
  */
-void env_builtin(void)
+
+void builtin_env(void)
 {
 	int i;
 
