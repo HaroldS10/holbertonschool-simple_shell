@@ -1,1 +1,1 @@
-![Esta es una imagen de ejemplo]("C:\Users\Lenovo\Downloads\My_simple_shell (1).png")
+![Diseñado con canva](https://www.canva.com/design/DAFhOzmMyfE/view)
