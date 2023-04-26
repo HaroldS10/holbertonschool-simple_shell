@@ -47,9 +47,12 @@ int main(void)
  *			i++;
  *		}
  */
-		execute(args);
-	free(args);
 
+		if(args)
+		{
+			execute(args);
+			free(args);
+		}
 
 	}
 

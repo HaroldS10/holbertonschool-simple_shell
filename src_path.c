@@ -38,10 +38,14 @@ char *find_path(char *file)
 			free(auxpath);
 			return (direction);
 		}
+		else
+		{
+			perror("command not found");
 		free(direction);
 		path = strtok(NULL, ":");
 		pathlen = strlen(path);
 	}
 	free(auxpath);
 	return (NULL);
+}
 }
