@@ -39,11 +39,12 @@ int main(void)
 
 		args = parse_line(buffer);
 		while(args[i] != NULL)
-		{
-			printf("%s\n",args[i]);
-			i++;
-		}
-
+			/**
+			   {
+			   printf("%s\n",args[i]);
+			   i++;
+			   }
+			*/
 		execute(args);
 	free(args);
 

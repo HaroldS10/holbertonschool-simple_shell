@@ -21,7 +21,7 @@ char *find_path(char *file)
 	filelen = strlen(file);
 	while (path)
 	{
-		printf("Actual dir: %s\n", path);
+		/**	printf("Actual dir: %s\n", path);*/
 		direction = calloc((pathlen + filelen + 2), sizeof(*direction));
 		if (direction == NULL)
 			return (NULL);
