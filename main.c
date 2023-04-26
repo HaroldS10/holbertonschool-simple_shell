@@ -13,6 +13,7 @@ int main(void)
 	char **args = NULL;
 /*	int i;*/
 
+	buffer = malloc(500);
 	while (1)
 	{
 /*		i = 0;*/
@@ -20,7 +21,7 @@ int main(void)
 
 			write(STDOUT_FILENO, "($)", 3);
 
-		buffer = malloc(500);
+
 		nread = getline(&buffer, &bufsize, stdin);
 		if (nread == -1)
 		{
