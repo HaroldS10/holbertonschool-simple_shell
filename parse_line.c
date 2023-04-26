@@ -15,7 +15,7 @@ char **parse_line(char *line)
 	int filestatus = 0;
 	char *auxpath = NULL;
 
-/**
+         /**
 	 *conditional checking whether the tokens pointer is null or not.
 	 */
 
