@@ -2,7 +2,9 @@
 #define SHELL_H
 #define _GNU_SOURCE
 
-
+/**
+ *libraries
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,8 +13,9 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-
-
+/**
+ *functions
+*/
 char *prompt(void);
 char **parse_line(char *line);
 void execute(char **args);

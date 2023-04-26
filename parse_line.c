@@ -9,13 +9,13 @@
 char **parse_line(char *line)
 {
 	int bufsize = 64, position = 0;
-	char **tokens = NULL;
+	char **tokens = malloc(bufsize*(sizeof(char*)));
 	char *token = NULL;
-	/*struct stat st;*/
-	/*int filestatus;*/
+	struct stat st;
+	int filestatus = 0;
 	char *auxpath = NULL;
 
-	/**
+/**
 	 *conditional checking whether the tokens pointer is null or not.
 	 */
 
@@ -37,49 +37,22 @@ char **parse_line(char *line)
 	 *check if tokens[0] eixst in PATH
 	 */
 
-	/*filestatus = stat(tokens[0],&st);*/
-
-	/**
-	 *if tokens[0] is found in PATH, update tokens[0] with full path
-	 */
-	if(strstr(tokens[0],"/") != NULL && strcmp(tokens[0],"env") != 0 && strcmp(tokens[0],"exit") != 0)
-	{
-		tokens[0] = auxpath;
-	}
-	if(getenv("PATH") != NULL)
+	filestatus = stat(tokens[0], &st);
+	if (getenv("PATH") != NULL && filestatus == -1)
 	{
 		auxpath = find_path(tokens[0]);
-	}
-
-	if (auxpath != NULL)
-	{
-		tokens[0] = auxpath;
-		free(auxpath);
-	}
-	/**
-	 *if file exists or command is exit or env.
-	 */
-	/*if(filestatus == 0 || strcmp(tokens[0],"exit") == 0 || strcmp(tokens[0],"env") == 0)*/
-
-	/*return (NULL);*/
-	/**
-	 *conditional checking if the array of tokens is bigger than the predetermined
-	 *size
-	 */
-	if (position >= bufsize)
-	{
-		bufsize += 64;
-		tokens = realloc(tokens, bufsize * sizeof(char *));
-		if (!tokens)
+		if (auxpath != NULL)
 		{
-			perror("allocation error");
-			exit(EXIT_FAILURE);
+			tokens[0] = auxpath;
+		}
+		else
+		{
+			perror("test");
+			return (NULL);
 		}
 	}
+	tokens[position] = NULL;
 
-	/**
-	 *Mark the end of the array with a NULL pointer
-	 */
-	tokens[position+1] = NULL;
+
 	return (tokens);
 }

@@ -32,6 +32,7 @@ void execute(char **args)
 		}
 		else
 		{
+
 			do
 			{
 				wait(&status);
