@@ -11,21 +11,6 @@ My_simple_shell is a UNIX command interpreter that replicates the main functiona
 
 ## Flowchart
 
-## Installation
-
-1. Clone the repository from GitHub:
-
-https://github.com/andres-f-ariza/holbertonschool-simple_shell.git
-
-2. Compile the shell using GCC:
-
-cd holbertonschool-simple_shell
-gcc -o main main.c
-
-3. Run the shell:
-
-./main
-
 ## Usage
 
 Proper use of the simple shell consists of compiling all the files in the repository. After this executing the resulting file. From now on this file will be called hsh. Simple Shell has the ability to execute any executable file, which can be called in interactive mode, or in non-interactive mode. Next an example.
