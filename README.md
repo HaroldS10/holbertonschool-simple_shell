@@ -11,6 +11,8 @@ My_simple_shell is a UNIX command interpreter that replicates the main functiona
 
 ## Flowchart
 
+![code2flow_RUhP4s](https://user-images.githubusercontent.com/63271720/235014456-511ef117-d370-4b30-aae8-673323907eaa.png)
+
 ## Usage
 
 Proper use of the simple shell consists of compiling all the files in the repository. After this executing the resulting file. From now on this file will be called hsh. Simple Shell has the ability to execute any executable file, which can be called in interactive mode, or in non-interactive mode. Next an example.
