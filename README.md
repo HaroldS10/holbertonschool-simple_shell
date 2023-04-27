@@ -51,12 +51,11 @@ When `simple_shel` is run, command line are written as any other line interprete
 Files implemented for the operation of the simple_shell are.
 |File| Description |
 |--|--|
-|`execute.c`|recreation of the calloc stdlib.h function |
-|`find_path.c`|groups the needed functions to initialize and run the command interpreter|
+|`execute.c`| |
+|`src_path.c`|groups the needed functions to initialize and run the command interpreter|
 |`parse_line.c`|groups the functions that transforms a line into an array of strings used by the execve function|
-|`promp.c`|groups the string modifying functions that were not needed on `_printf.c`|
 |`main.c`| main function for hsh|
-
+|`get_env.c`| main function for hsh|
 
 ## Authors
 * Harold Suarez <[HaroldS10](https://github.com/HaroldS10/holbertonschool-simple_shell)> 
