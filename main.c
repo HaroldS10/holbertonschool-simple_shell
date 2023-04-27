@@ -35,7 +35,10 @@ i = 0;*/
 		    status = 32512;
 
 	}
-
+	if(nread)
+	{
+		/*do nothing*/
+	}
 	free(buffer);
 	buffer = NULL;
 	exit(WEXITSTATUS(status));
