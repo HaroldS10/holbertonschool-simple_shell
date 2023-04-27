@@ -19,10 +19,10 @@ void execute(char **args)
 		if (strcmp(args[0], "env") == 0)
 			builtin_env();
 		/**
-		   Child process */
+		    Child process */
 		if (execve(args[0], args, environ) == -1)
 		{
-			perror("execute");
+		    perror("execute");
 			exit(EXIT_FAILURE);
 		}
 
@@ -34,11 +34,12 @@ void execute(char **args)
 		}
 		else
 		{
-
-			do
-			{
-				wait(&status);
-			} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+			/**
+			   Parent process */
+                do
+		{
+		wait(&status);
+		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 		}
 	}
 }

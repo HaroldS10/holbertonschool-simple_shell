@@ -11,17 +11,17 @@ int main(void)
 	size_t bufsize = 500;
 	ssize_t nread;
 	char **args = NULL;
-/*	int i;*/
 
-	buffer = malloc(500);
+     /*	int i;*/
+
 	while (1)
 	{
-/*		i = 0;*/
+     /*i = 0;*/
 		if (isatty(STDIN_FILENO))
 
+		buffer = malloc(500);
+
 			write(STDOUT_FILENO, "($)", 3);
-
-
 		nread = getline(&buffer, &bufsize, stdin);
 		if (nread == -1)
 		{
@@ -47,12 +47,17 @@ int main(void)
  *			i++;
  *		}
  */
+		if(args)
+		{
+			execute(args);
 
-		
+		}
+
 
 	}
 
 	free(buffer);
+	buffer = NULL;
 	return (0);
 
 }

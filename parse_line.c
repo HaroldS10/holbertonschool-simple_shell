@@ -38,6 +38,8 @@ char **parse_line(char *line)
 	 */
 
 	filestatus = stat(tokens[0], &st);
+	/**
+	   printf("Status: %d\n",filestatus);*/
 	if (getenv("PATH") != NULL && filestatus == -1)
 	{
 		auxpath = find_path(tokens[0]);
@@ -47,12 +49,27 @@ char **parse_line(char *line)
 		}
 		else
 		{
-			perror("test");
-			return (NULL);
+			printf("Status: %d\n",filestatus);
+
+		printf("File: %s\n", tokens[0]);
+		    if (errno == ENOENT)
+		    {
+			    printf("Error: File %s not found.\n", tokens[0]);
+		    }
+		    else if (errno == EACCES)
+            {
+		    printf("Error: Permission denied for file %s.\n", tokens[0]);
+            }
+            else
+            {
+		    printf("Error: Unable to retrieve information about file %s (errno=%d)\n", tokens[0], errno);
+            }
+		    exit(EXIT_FAILURE);
 		}
-	}
+	
 	tokens[position] = NULL;
 
 
 	return (tokens);
+}
 }
