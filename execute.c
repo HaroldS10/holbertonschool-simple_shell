@@ -3,43 +3,39 @@
 /**
  * execute - function that executes a given command
  * @args: array of arguments passed with the command
- * Return: void
+ * Return: exit status
  */
-void execute(char **args)
+int execute(char **args)
 {
 	pid_t pid;
-	int status;
-	if(args[0] != NULL)
-		pid = fork();
+	int status = 0;
+
+	if (strcmp(args[0], "env") == 0) {
+			builtin_env();
+			return (0);
+	}
+
+	pid = fork();
+	if (pid < 0)
+	{
+		/**
+		   Error forking */
+	    perror("fork");
+	}
+
 	/**
-         *if pid = 0, this is the child proccess
-         */
+	   if pid = 0, this is the child proccess */
 	if (pid == 0)
 	{
-		if (strcmp(args[0], "env") == 0)
-			builtin_env();
 		/**
-		    Child process */
-		if (execve(args[0], args, environ) == -1)
-		{
-		    perror("execute");
-			exit(EXIT_FAILURE);
-		}
-
-		else if (pid < 0)
-		{
-			/**
-			   Error forking */
-			perror("fork");
-		}
-		else
-		{
-			/**
-			   Parent process */
-                do
-		{
-		wait(&status);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
-		}
+		   Child process */
+		execve(args[0], args, environ);
 	}
+	else
+	{
+		/**
+		   Parent process */
+		wait(&status);
+	}
+	return (status);
 }

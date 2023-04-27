@@ -24,6 +24,7 @@ char *find_path(char *file)
 	{
 /**
    printf("Actual dir: %s\n", path);*/
+        pathlen = strlen(path);
 		direction = calloc((pathlen + filelen + 2), sizeof(*direction));
 		if (direction == NULL)
 			return (NULL);
@@ -33,7 +34,7 @@ char *find_path(char *file)
 			direction[dirlen] = '/';
 		direction = strcat(direction, file);
 /**
-printf("Got direction: %s\n", direction);*/
+   printf("Got direction: %s\n", direction);*/
 		filestatus = stat(direction, &st);
 		if (filestatus == 0)
 		{
@@ -42,7 +43,7 @@ printf("Got direction: %s\n", direction);*/
 		}
 		free(direction);
 		path = strtok(NULL, ":");
-		pathlen = strlen(path);
+
 	}
 	free(auxpath);
 	return (NULL);
