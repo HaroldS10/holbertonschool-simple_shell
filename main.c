@@ -48,11 +48,7 @@ int main(void)
  *		}
  */
 
-		if(args)
-		{
-			execute(args);
-			free(args);
-		}
+		
 
 	}
 
