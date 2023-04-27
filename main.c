@@ -1,3 +1,4 @@
+#include "shell.h"
 void main(int ac __attribute__((unused)), char** av)
 {
     int status = 0;
