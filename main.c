@@ -4,11 +4,12 @@
  * main - Main function for shell
  * @ac: Argument counter
  * @av: Argument vector
- * Return: The exit status if it was executed, if it was not executed it returns 0
+ * Return: The exit status if it was executed
+ * if it was not executed it returns 0
  */
 int main(int ac __attribute__((unused)), char **av)
 {
-        int status = 0;
+	int status = 0;
         char *buffer = NULL;
         size_t bufsize = 500;
         ssize_t nread;
@@ -33,7 +34,7 @@ int main(int ac __attribute__((unused)), char **av)
         if (nread)
         {
                 /**
-                 *do nothing}
+                 *do nothing
 		 */
         }
         free(buffer);
