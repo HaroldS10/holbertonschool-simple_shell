@@ -63,6 +63,7 @@ Files implemented for the operation of the simple_shell are.
 |`parse_line.c`|groups the functions that transforms a line into an array of strings used by the execve function|
 |`main.c`| main function for hsh|
 |`get_env.c`| main function for hsh|
+|`execute.c`| |
 
 ## Authors
 * Harold Suarez <[HaroldS10](https://github.com/HaroldS10/holbertonschool-simple_shell)> 
