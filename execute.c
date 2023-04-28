@@ -10,7 +10,7 @@ int execute(char **args)
 	pid_t pid;
 	int status = 0;
 
-	if (strcmp(args[0], "env") == 0) {
+	if (_strcmp(args[0], "env") == 0) {
 			builtin_env();
 			return (0);
 	}

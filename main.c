@@ -7,13 +7,9 @@ int main(int ac __attribute__((unused)), char** av)
 	ssize_t nread;
 	char **args = NULL;
 
-/**
-int i;*/
 
 	while (1)
 	{
-/**
-i = 0;*/
 
 		if (isatty(STDIN_FILENO))
 
@@ -21,7 +17,7 @@ i = 0;*/
         write(STDOUT_FILENO, "($)", 3);
 
 		nread = getline(&buffer, &bufsize, stdin);
-		if (strcmp(buffer, "exit\n") == 0)
+		if (_strcmp(buffer, "exit\n") == 0)
 			break;
 
 		if (*buffer == '\0' || *buffer == '\n')
@@ -37,7 +33,8 @@ i = 0;*/
 	}
 	if(nread)
 	{
-		/*do nothing*/
+		/**
+		   do nothing*/
 	}
 	free(buffer);
 	buffer = NULL;

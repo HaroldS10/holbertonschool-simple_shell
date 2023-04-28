@@ -12,27 +12,27 @@ char *find_path(char *file)
 	struct stat st;
 	int pathlen, filelen, filestatus, dirlen;
 
-	pathlen = strlen(getenv("PATH"));
+	pathlen = _strlen(getenv("PATH"));
 	path = calloc((pathlen + 1), sizeof(*path));
 	if (path == NULL)
 		return (NULL);
 	auxpath = path;
-	strcpy(path, getenv("PATH"));
+	_strcpy(path, getenv("PATH"));
 	path = strtok(path, ":");
-	filelen = strlen(file);
+	filelen = _strlen(file);
 	while (path)
 	{
 /**
    printf("Actual dir: %s\n", path);*/
-        pathlen = strlen(path);
+        pathlen = _strlen(path);
 		direction = calloc((pathlen + filelen + 2), sizeof(*direction));
 		if (direction == NULL)
 			return (NULL);
-		strcpy(direction, path);
-		dirlen = strlen(direction);
+		_strcpy(direction, path);
+		dirlen = _strlen(direction);
 		if (direction[dirlen - 1] != '/')
 			direction[dirlen] = '/';
-		direction = strcat(direction, file);
+		direction = _strcat(direction, file);
 /**
    printf("Got direction: %s\n", direction);*/
 		filestatus = stat(direction, &st);
