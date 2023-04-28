@@ -58,12 +58,12 @@ When `simple_shel` is run, command line are written as any other line interprete
 Files implemented for the operation of the simple_shell are.
 |File| Description |
 |--|--|
-|`execute.c`| |
-|`src_path.c`|groups the needed functions to initialize and run the command interpreter|
-|`parse_line.c`|groups the functions that transforms a line into an array of strings used by the execve function|
+|`execute.c`|Function that executes a given command |
+|`src_path.c`|This function is responsible for searching the Path for a file.|
+|`parse_line.c`|Function in charge of dividing a string several tokens.|
 |`main.c`| main function for hsh|
-|`get_env.c`| main function for hsh|
-|`execute.c`| |
+|`get_env.c`| Prototype of the getenv function from the C standard library.|
+|`str_functions.c`| This file is a customized version of the functions found in it in the standard C libraries, in order to implement them in our program.|
 
 ## Authors
 * Harold Suarez <[HaroldS10](https://github.com/HaroldS10/holbertonschool-simple_shell)> 
