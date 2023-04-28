@@ -9,7 +9,7 @@
 char **parse_line(char *line, char *exec_name)
 {
 	int bufsize = 64, position = 0;
-	char **tokens = malloc(bufsize*(sizeof(char*)));
+	char **tokens = malloc (bufsize*(sizeof(char *)));
 	char *token = NULL;
 	struct stat st;
 	int filestatus = 0;
@@ -17,7 +17,7 @@ char **parse_line(char *line, char *exec_name)
 
 /**
  *conditional checking whether the tokens pointer is null or not.
-	 */
+ */
 
 	if (!tokens)
 	{
@@ -38,8 +38,7 @@ char **parse_line(char *line, char *exec_name)
 	 */
 
 	filestatus = stat(tokens[0], &st);
-	/**
-	 *printf("Status: %d\n",filestatus); */
+
 	if (getenv("PATH") != NULL && filestatus == -1)
 	{
 		auxpath = find_path(tokens[0]);
@@ -49,7 +48,7 @@ char **parse_line(char *line, char *exec_name)
 		}
 		else
 		{
-			printf("Status: %d\n",filestatus);
+			printf("Status: %d\n", filestatus);
 			printf("File: %s\n", tokens[0]);
 			if (errno == ENOENT)
 			{

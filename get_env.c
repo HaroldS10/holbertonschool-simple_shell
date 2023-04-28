@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * env_builtin - prints the environment
+ * builtin_env - prints the environment
  */
 
 void builtin_env(void)
