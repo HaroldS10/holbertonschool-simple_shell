@@ -11,7 +11,8 @@ My_simple_shell is a UNIX command interpreter that replicates the main functiona
 
 ## Flowchart
 
-![code2flow_RUhP4s](https://user-images.githubusercontent.com/63271720/235014456-511ef117-d370-4b30-aae8-673323907eaa.png)
+
+[code2flow_RUhP4s.pdf](https://github.com/HaroldS10/holbertonschool-simple_shell/files/11348948/code2flow_RUhP4s.pdf)
 
 ## Usage
 
