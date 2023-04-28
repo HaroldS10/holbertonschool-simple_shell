@@ -1,62 +1,45 @@
 #include "shell.h"
-
-/**
- *main - entry point for the shell program
- *Return: 0 on success
- */
-
-int main(void)
+int main(int ac __attribute__((unused)), char** av)
 {
+    int status = 0;
 	char *buffer = NULL;
 	size_t bufsize = 500;
 	ssize_t nread;
 	char **args = NULL;
-/*	int i;*/
 
-	buffer = malloc(500);
+/**
+int i;*/
+
 	while (1)
 	{
-/*		i = 0;*/
+/**
+i = 0;*/
+
 		if (isatty(STDIN_FILENO))
 
-			write(STDOUT_FILENO, "($)", 3);
-
+		buffer = malloc(500);
+        write(STDOUT_FILENO, "($)", 3);
 
 		nread = getline(&buffer, &bufsize, stdin);
-		if (nread == -1)
-		{
-			if (feof(stdin))
-			{
-				break;
-			}
-			else
-			{
-				perror("readline");
-				exit(EXIT_FAILURE);
-			}
-		}
+		if (strcmp(buffer, "exit\n") == 0)
+			break;
 
 		if (*buffer == '\0' || *buffer == '\n')
 			continue;
 
-		args = parse_line(buffer);
-/**
- *		while(args[i] != NULL)
- *		{
- *			printf("%s\n",args[i]);
- *			i++;
- *		}
- */
+		args = parse_line(buffer, av[0]);
 
 		if(args)
-		{
-			execute(args);
-			free(args);
-		}
+			status = execute(args);
+		else
+		    status = 32512;
 
 	}
-
+	if(nread)
+	{
+		/*do nothing*/
+	}
 	free(buffer);
-	return (0);
-
+	buffer = NULL;
+	exit(WEXITSTATUS(status));
 }

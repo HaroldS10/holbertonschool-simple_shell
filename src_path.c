@@ -22,7 +22,9 @@ char *find_path(char *file)
 	filelen = strlen(file);
 	while (path)
 	{
-/*		printf("Actual dir: %s\n", path);*/
+/**
+   printf("Actual dir: %s\n", path);*/
+        pathlen = strlen(path);
 		direction = calloc((pathlen + filelen + 2), sizeof(*direction));
 		if (direction == NULL)
 			return (NULL);
@@ -31,21 +33,18 @@ char *find_path(char *file)
 		if (direction[dirlen - 1] != '/')
 			direction[dirlen] = '/';
 		direction = strcat(direction, file);
-/*		printf("Got direction: %s\n", direction);*/
+/**
+   printf("Got direction: %s\n", direction);*/
 		filestatus = stat(direction, &st);
 		if (filestatus == 0)
 		{
 			free(auxpath);
 			return (direction);
 		}
-		else
-		{
-			perror("command not found");
 		free(direction);
 		path = strtok(NULL, ":");
-		pathlen = strlen(path);
+
 	}
 	free(auxpath);
 	return (NULL);
-}
 }
