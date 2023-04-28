@@ -16,7 +16,6 @@ int main(int ac __attribute__((unused)), char **av)
 
         while (1)
         {
-
                 if (isatty(STDIN_FILENO))
 			buffer = malloc(500);
                 write(STDOUT_FILENO, "($)", 3);
@@ -26,12 +25,10 @@ int main(int ac __attribute__((unused)), char **av)
                 if (*buffer == '\0' || *buffer == '\n')
                         continue;
                 args = parse_line(buffer, av[0]);
-
                 if (args)
                         status = execute(args);
                 else
                         status = 32512;
-
         }
         if (nread)
         {
