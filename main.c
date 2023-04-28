@@ -14,22 +14,17 @@ int main(int ac __attribute__((unused)), char **av)
         ssize_t nread;
         char **args = NULL;
 
-
         while (1)
         {
 
                 if (isatty(STDIN_FILENO))
-
-                buffer = malloc(500);
+			buffer = malloc(500);
                 write(STDOUT_FILENO, "($)", 3);
-
                 nread = getline(&buffer, &bufsize, stdin);
                 if (_strcmp(buffer, "exit\n") == 0)
                         break;
-
                 if (*buffer == '\0' || *buffer == '\n')
                         continue;
-
                 args = parse_line(buffer, av[0]);
 
                 if (args)
@@ -41,7 +36,8 @@ int main(int ac __attribute__((unused)), char **av)
         if (nread)
         {
                 /**
-                 *do nothing */
+                 *do nothing}
+		 */
         }
         free(buffer);
         buffer = NULL;

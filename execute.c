@@ -21,22 +21,26 @@ int execute(char **args)
 	if (pid < 0)
 	{
 		/**
-		 *Error forking */
+		 *Error forking
+		 */
 		perror("fork");
 	}
 
 	/**
-	 *if pid = 0, this is the child proccess */
+	 *if pid = 0, this is the child proccess
+	 */
 	if (pid == 0)
 	{
 		/**
-		 *Child process */
+		 *Child process
+		 */
 		execve(args[0], args, environ);
 	}
 	else
 	{
 		/**
-		 *Parent process */
+		 *Parent process
+		 */
 		wait(&status);
 	}
 	return (status);
