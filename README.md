@@ -1,4 +1,5 @@
-![My_simple_shell (1)](https://user-images.githubusercontent.com/63271720/234700324-460bc043-ce2c-4521-9831-3fbd2aa7f386.png)
+![My_simple_shell (1)](https://user-images.githubusercontent.com/63271720/235030205-9105a2ca-b207-4649-8814-6db68cb435b4.png)
+
 
 My_simple_shell is a UNIX command interpreter that replicates the main functionality of the sh shell. This project was developed as part of the first cycle curriculum at Holberton School.
 
@@ -10,6 +11,12 @@ My_simple_shell is a UNIX command interpreter that replicates the main functiona
 - Standard C libraries
 
 ## Flowchart
+
+
+
+![diagram2](https://user-images.githubusercontent.com/63271720/235029597-0dd0d8d1-3076-499f-98c4-c0c90ce615ac.JPG)
+
+[code2flow_RUhP4s.pdf](https://github.com/HaroldS10/holbertonschool-simple_shell/files/11348948/code2flow_RUhP4s.pdf)
 
 ## Usage
 
